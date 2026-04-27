@@ -17,13 +17,13 @@ export default function ResultCard({ shortUrl }: Props) {
   };
 
   return (
-    <div className="mt-6 p-4 bg-gray-100 rounded-xl text-center space-y-3">
-      <p className="text-sm text-gray-500">Your short link</p>
+    <div className="mt-6 p-4 bg-gray-50 border rounded-xl text-center space-y-3">
+      <p className="text-sm text-gray-700">Your short link</p>
 
       <a
         href={shortUrl}
         target="_blank"
-        className="block text-blue-600 font-medium break-all"
+        className="block text-blue-700 font-semibold break-all hover:underline"
       >
         {shortUrl}
       </a>
@@ -32,7 +32,9 @@ export default function ResultCard({ shortUrl }: Props) {
         onClick={handleCopy}
         className="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-gray-800"
       >
-        {copied ? "Copied!" : "Copy"}
+        {copied && (
+          <p className="text-xs text-green-600">Copied to clipboard</p>
+        )}
       </button>
     </div>
   );
